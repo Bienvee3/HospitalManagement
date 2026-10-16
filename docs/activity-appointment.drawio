@@ -1,0 +1,44 @@
+<mxfile host="app.diagrams.net" modified="2026-10-16T00:00:00.000Z" agent="Codex" version="24.7.17">
+  <diagram id="appointment-flow" name="Appointment flow">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="receptionist" value="Receptionist" style="swimlane;horizontal=0;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="20" y="20" width="350" height="700" as="geometry"/></mxCell>
+        <mxCell id="system" value="System" style="swimlane;horizontal=0;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="370" y="20" width="430" height="700" as="geometry"/></mxCell>
+        <mxCell id="doctor" value="Doctor" style="swimlane;horizontal=0;startSize=30;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="800" y="20" width="330" height="700" as="geometry"/></mxCell>
+        <mxCell id="start" value="" style="ellipse;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="165" y="65" width="20" height="20" as="geometry"/></mxCell>
+        <mxCell id="login" value="Log in" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="100" y="110" width="150" height="40" as="geometry"/></mxCell>
+        <mxCell id="search" value="Search for patient" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="100" y="205" width="150" height="40" as="geometry"/></mxCell>
+        <mxCell id="select" value="Select doctor and slot" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="90" y="300" width="170" height="40" as="geometry"/></mxCell>
+        <mxCell id="submit" value="Submit booking" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="100" y="395" width="150" height="40" as="geometry"/></mxCell>
+        <mxCell id="permission" value="Check booking permission" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="485" y="110" width="180" height="40" as="geometry"/></mxCell>
+        <mxCell id="allowed" value="Role permitted?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="530" y="185" width="90" height="70" as="geometry"/></mxCell>
+        <mxCell id="availability" value="Check doctor availability" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="480" y="295" width="190" height="40" as="geometry"/></mxCell>
+        <mxCell id="taken" value="Slot already taken?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="530" y="375" width="90" height="70" as="geometry"/></mxCell>
+        <mxCell id="save" value="Save appointment as Scheduled" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="465" y="500" width="220" height="40" as="geometry"/></mxCell>
+        <mxCell id="refusePermission" value="Refuse: unauthorized" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="625" y="200" width="150" height="40" as="geometry"/></mxCell>
+        <mxCell id="refuseSlot" value="Refuse: slot unavailable" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="625" y="390" width="155" height="40" as="geometry"/></mxCell>
+        <mxCell id="see" value="See appointment in list" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="875" y="500" width="180" height="40" as="geometry"/></mxCell>
+        <mxCell id="notes" value="Record diagnosis and notes" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="865" y="590" width="200" height="40" as="geometry"/></mxCell>
+        <mxCell id="complete" value="Mark appointment Completed" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="475" y="590" width="200" height="40" as="geometry"/></mxCell>
+        <mxCell id="end" value="" style="ellipse;shape=endState;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1"><mxGeometry x="565" y="665" width="28" height="28" as="geometry"/></mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="start" target="login"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="login" target="permission"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="permission" target="allowed"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" value="[yes]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="allowed" target="search"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" value="[no]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="allowed" target="refusePermission"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="search" target="select"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="select" target="submit"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="submit" target="availability"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="availability" target="taken"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e10" value="[no]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="taken" target="save"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e11" value="[yes]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="taken" target="refuseSlot"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="save" target="see"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="see" target="notes"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="notes" target="complete"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;" edge="1" parent="1" source="complete" target="end"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

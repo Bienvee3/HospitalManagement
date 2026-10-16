@@ -290,6 +290,7 @@ The scenario is grouped into six epics. E6 represents the engineering and delive
 ### 6.2 Task Decomposition for Top Stories
 
 #### US-01: As any staff member, I want to log in, so that I reach only the functionality my role permits
+
 - **Blocked by:** None
 
 | ID | Task | Kind | Depends on |
@@ -305,6 +306,7 @@ The scenario is grouped into six epics. E6 represents the engineering and delive
 ---
 
 #### US-02: As an administrator, I want to register a doctor with a specialisation, so that they can be assigned to consultations
+
 - **Blocked by:** US-01
 
 | ID | Task | Kind | Depends on |
@@ -318,6 +320,7 @@ The scenario is grouped into six epics. E6 represents the engineering and delive
 ---
 
 #### US-03: As a receptionist, I want to register a new patient, so that the patient can be booked for an appointment
+
 - **Blocked by:** US-01
 
 | ID | Task | Kind | Depends on |
@@ -331,6 +334,7 @@ The scenario is grouped into six epics. E6 represents the engineering and delive
 ---
 
 #### US-04: As a receptionist, I want to search for an existing patient, so that I can view their details without duplicating records
+
 - **Blocked by:** US-03
 
 | ID | Task | Kind | Depends on |
@@ -343,6 +347,7 @@ The scenario is grouped into six epics. E6 represents the engineering and delive
 ---
 
 #### US-05: As a receptionist, I want to schedule an appointment, so that a patient is seen by the right doctor
+
 - **Blocked by:** US-02, US-03
 
 | ID | Task | Kind | Depends on |
@@ -358,6 +363,7 @@ The scenario is grouped into six epics. E6 represents the engineering and delive
 ---
 
 #### US-06: As a doctor, I want to record diagnosis and visit notes, so that consultation outcomes are documented
+
 - **Blocked by:** US-05
 
 | ID | Task | Kind | Depends on |
@@ -371,6 +377,7 @@ The scenario is grouped into six epics. E6 represents the engineering and delive
 ---
 
 #### US-07: As a doctor, I want to read a patient's previous records, so that I can review their clinical history
+
 - **Blocked by:** US-06
 
 | ID | Task | Kind | Depends on |
@@ -382,6 +389,7 @@ The scenario is grouped into six epics. E6 represents the engineering and delive
 ---
 
 #### US-08: As a doctor, I want to export my authorised data to CSV, so that I have a portable clinical summary
+
 - **Blocked by:** US-06
 
 | ID | Task | Kind | Depends on |
@@ -393,6 +401,7 @@ The scenario is grouped into six epics. E6 represents the engineering and delive
 ---
 
 #### E6 Platform and Pipeline Tasks
+
 - **Blocked by:** None
 
 | ID | Task | Kind | Depends on |
@@ -419,6 +428,7 @@ The scenario is grouped into six epics. E6 represents the engineering and delive
 Points compare stories to each other. Hours commit to a calendar you do not control.
 
 Five factors drive story point values:
+
 1. **Amount of work:** Number of tasks, files, and volume of implementation.
 2. **Technical complexity:** Difficult logic, relational queries, concurrency or security checks.
 3. **Uncertainty:** New technologies, tools, or libraries not used before.
@@ -432,6 +442,7 @@ When working alone alongside other courses, available hours fluctuate wildly, bu
 ### 7.2 The Scale and Anchor
 
 The project uses the following scale:
+
 - **1 (Trivial):** Understood completely, no new technology, one or two files, barely any test.
 - **2 (Small):** Routine work on something that already exists. A form field, a list view.
 - **3 (Standard):** Several tasks, a few tests, nothing you have not done before. **The anchor lives here.**
@@ -498,8 +509,19 @@ Sprint 1 capacity is an opening estimate of **12 to 15 points**. After Sprint 1,
 ### 8.3 Dependency Verification
 
 Every sprint strictly respects dependency lines:
+
 - Sprint 1 delivers authentication (`US-01`) and the doctor entity (`US-02`), unblocking core workflows.
 - Sprint 2 establishes patient management (`US-03`, `US-04`, `US-09`), unblocking appointment scheduling.
 - Sprint 3 delivers appointments with the conflict rule (`US-05`), clinical notes (`US-06`), and history access (`US-07`).
 - Sprint 4 delivers reporting (`US-08`), user administration (`US-10`), and automated E2E tests and monitoring.
 No story is scheduled in a sprint before its prerequisites are met.
+
+---
+
+## 9. Tools and stack
+
+- **Language — Python:** Python keeps the application code concise and is well suited to building and testing a small web service quickly.
+- **Framework — FastAPI:** FastAPI provides typed request validation, straightforward route protection, and an ASGI application that containerises cleanly.
+- **Database — PostgreSQL:** PostgreSQL supports the relational constraints required for patients, doctors, appointments, and the no-double-booking rule, and has an official container image.
+- **Test runner — pytest:** pytest is lightweight, widely supported by the Python ecosystem, and runs reliably in headless GitHub Actions CI.
+- **End-to-end testing — Playwright for Python:** Playwright can exercise the browser workflows required by the Definition of Done and runs headlessly in CI.
