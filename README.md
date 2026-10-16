@@ -525,3 +525,9 @@ No story is scheduled in a sprint before its prerequisites are met.
 - **Database — PostgreSQL:** PostgreSQL supports the relational constraints required for patients, doctors, appointments, and the no-double-booking rule, and has an official container image.
 - **Test runner — pytest:** pytest is lightweight, widely supported by the Python ecosystem, and runs reliably in headless GitHub Actions CI.
 - **End-to-end testing — Playwright for Python:** Playwright can exercise the browser workflows required by the Definition of Done and runs headlessly in CI.
+
+---
+
+## 10. GitHub Project
+
+The product backlog is managed in the [Hospital Management GitHub Project](https://github.com/users/Bienvee3/projects/1).
