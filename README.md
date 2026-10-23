@@ -191,6 +191,18 @@ A backlog item is declared **Done** and eligible for release only when all of th
 
 ---
 
+### 4.5 Branch Naming Convention
+
+Every implementation branch is created from its corresponding GitHub issue and follows this convention:
+
+```
+<issue-number>-<story-or-task-id>-<short-description>
+```
+
+For example: `3-t-05-3-conflict-rule`. One branch is used per task (or per small user story), is always created from an up-to-date `main`, and is merged back only through a pull request. Commits reference the issue number, and the pull request description uses `Closes #<issue-number>` so GitHub closes the work item after merge.
+
+---
+
 ## 5. Process and ceremonies
 
 ### 5.1 Sprint Length and Cadence
@@ -500,7 +512,7 @@ Sprint 1 capacity is an opening estimate of **12 to 15 points**. After Sprint 1,
 | Sprint | Goal | Stories | Pts |
 | :---: | :--- | :--- | :---: |
 | **1** | Walking skeleton: login works, pipeline builds and publishes | US-01, US-02, CI setup | **15** |
-| **2** | Patient and doctor records end to end, container published | US-03, US-04, US-09, CD | **12** |
+| **2** | Patient and doctor records end to end, container published | US-03, US-04, US-09, CD | **10** |
 | **3** | Appointments and clinical notes | US-05, US-06, US-07 | **10** |
 | **4** | Export, user admin, tests and monitoring | US-08, US-10, E2E, metrics | **13** |
 
