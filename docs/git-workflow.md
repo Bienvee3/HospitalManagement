@@ -42,8 +42,20 @@ Issue before retrying.
 
 ## Lab 4 evidence
 
-Task #150 is the real-task cycle: it is created from its Issue, uses this
-linked branch, has at least two issue-referencing commits, includes a stash
-interruption, is reviewed through a pull request, and is released as `v0.1.0`.
-The practice repositories and their commit graphs are documented in
-`docs/branching-strategy.md`.
+Issue [#150](https://github.com/Bienvee3/HospitalManagement/issues/150) is the
+real task for this guide and uses the linked branch
+`150-t-l4-1-workflow-strategy`. Its first issue-referencing commit added this
+guide and the `.gitignore`. A stash interruption and restore was also
+performed locally while an unrelated change was committed on the
+`lab4-stash-interruption` branch; that practice commit is not part of this
+task's pull request.
+
+The issue's card is in progress on the Hospital Management Project. GitHub
+branch protection is enabled on `main`: pull requests are required, direct
+pushes, force pushes, and branch deletion are blocked, and no second approval
+is required. CI checks can be made mandatory once the CI workflow exists.
+
+The task is not complete until a second issue-referencing commit is included
+in a pull request with `Closes #150`, the change is self-reviewed and merged,
+and the annotated `v0.1.0` tag and GitHub Release are published. Do not infer
+completion from this document alone.
