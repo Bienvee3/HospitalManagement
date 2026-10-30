@@ -543,3 +543,5 @@ No story is scheduled in a sprint before its prerequisites are met.
 ## 10. GitHub Project
 
 The product backlog is managed in the [Hospital Management GitHub Project](https://github.com/users/Bienvee3/projects/1).
+
+Repository workflow policies are documented in the [Git workflow](./docs/git-workflow.md) and [branching strategy](./docs/branching-strategy.md).
